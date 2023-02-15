@@ -8,9 +8,13 @@
   },
   "scripts": {
     "start": "pnpm build && sls offline --httpPort 5000",
+    "start-win": "pnpm build-win && sls offline --httpPort 5000",
     "dev": "nodemon -e ts --exec 'pnpm run start'",
+    "dev-win": "nodemon -e ts --exec pnpm run start-win",
     "build": "pnpm compile && pnpm esbuild && rm -rf $npm_package_config_build_dir",
+    "build-win": "pnpm compile && pnpm esbuild-win && del /s /q /f %npm_package_config_build_dir% 1>null",
     "esbuild": "esbuild $npm_package_config_build_dir/$npm_package_config_build_entry --bundle --platform=node --target=node18 --outfile=$npm_package_config_dist_dir/$npm_package_config_dist_outfile --minify",
+    "esbuild-win": "esbuild %npm_package_config_build_dir%/%npm_package_config_build_entry% --bundle --platform=node --target=node18 --outfile=%npm_package_config_dist_dir%/%npm_package_config_dist_outfile% --minify",
     "compile": "tsc",
     "lint": "eslint . --ext .ts --fix",
     "pretty": "pnpm prettier --write .",

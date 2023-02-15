@@ -1952,8 +1952,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /aws-sdk/2.1302.0:
-    resolution: {integrity: sha512-OeP31meLGCcBJel2Re1yRsrjqDT3FvLFMQwPVtKHkXnws6QpgVg1FPiEjz4emEREUi6NfbqGNVExOGLsKiz0YA==}
+  /aws-sdk/2.1315.0:
+    resolution: {integrity: sha512-fDlK3iqA0bpXW6azVBAB8RTKhJ5YUjfe6sqKQF1lKT2cYT5qU4rtH5qUlMixlWkb8oKeSMA2voW3wZZtSpBFKQ==}
     engines: {node: '>= 10.0.0'}
     dependencies:
       buffer: 4.9.2
@@ -2096,7 +2096,7 @@ packages:
     resolution: {integrity: sha512-xq+q3SRMOxGivLhBNaUdC64hDTQwejJ+H0T/NB1XMtTVEwNTrfFF3gAxiyW0Bu/xWEGhjVKgUcMhCrUy2+uCWg==}
     dependencies:
       base64-js: 1.5.1
-      ieee754: 1.1.13
+      ieee754: 1.2.1
       isarray: 1.0.0
     dev: true
 
@@ -5174,7 +5174,7 @@ packages:
       ajv: 8.12.0
       ajv-formats: 2.1.1
       archiver: 5.3.1
-      aws-sdk: 2.1302.0
+      aws-sdk: 2.1315.0
       bluebird: 3.7.2
       cachedir: 2.3.0
       chalk: 4.1.2
