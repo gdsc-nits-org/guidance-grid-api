@@ -28,11 +28,11 @@
     "paths": {
       "@interfaces": ["src/interfaces"],
       "@controllers": ["src/controllers"],
+      "@middlewares": ["src/middlewares"],
       "@utils": ["src/utils"],
       "@constants": ["src/globals/constants"],
       "@success": ["src/globals/success"],
-      "@errors": ["src/globals/errors"],
-      "@middlewares": ["src/globals/middlewares"],
+      "@errors": ["src/globals/errors"]
     }
   }
 }

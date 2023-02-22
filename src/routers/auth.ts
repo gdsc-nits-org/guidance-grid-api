@@ -1,0 +1,11 @@
+import { Auth } from "@controllers";
+import { validate, SIGNUP_VALIDATORS, LOGIN_VALIDATORS } from "@middlewares";
+import { Router } from "express";
+
+const router: Router = Router({ mergeParams: true });
+
+router.post("/signup", SIGNUP_VALIDATORS, validate, Auth.signup);
+
+router.post("/login", LOGIN_VALIDATORS, validate, Auth.login);
+
+export default router;
