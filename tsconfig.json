@@ -24,6 +24,15 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "@interfaces": ["src/interfaces"],
+      "@controllers": ["src/controllers"],
+      "@middlewares": ["src/middlewares"],
+      "@utils": ["src/utils"],
+      "@constants": ["src/globals/constants"],
+      "@success": ["src/globals/success"],
+      "@errors": ["src/globals/errors"]
+    }
   }
 }
