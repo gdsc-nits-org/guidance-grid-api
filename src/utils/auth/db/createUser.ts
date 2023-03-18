@@ -1,5 +1,5 @@
 import * as Interfaces from "@interfaces";
-import hashPassword from "./hashPassword";
+import hashPassword from "../hashPassword";
 import { prisma } from "@utils";
 
 const createUser = async (user: Interfaces.User) => {

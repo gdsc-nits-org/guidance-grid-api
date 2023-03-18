@@ -1,15 +1,7 @@
 import hashPassword from "./hashPassword";
-import createUser from "./createUser";
-import checkEmail from "./checkEmail";
-import checkUsername from "./checkUsername";
-import getUserByUname from "./getUserByUname";
 import verifyPassword from "./verifyPassword";
+import login from "./login";
+import * as db from "./db";
+import * as passport from "./passport";
 
-export {
-  hashPassword,
-  createUser,
-  getUserByUname,
-  checkEmail,
-  checkUsername,
-  verifyPassword,
-};
+export { hashPassword, verifyPassword, login, db, passport };
