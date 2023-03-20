@@ -11,7 +11,7 @@ router.post(
   LOGIN_VALIDATORS,
   validate,
   passport.authenticate("local", { failWithError: true }),
-  Auth.loginSuccess
+  Auth.login
 );
 
 export default router;

@@ -9,5 +9,8 @@ declare global {
       name: string;
       password: string;
     }
+    export interface Request {
+      session?: any;
+    }
   }
 }
