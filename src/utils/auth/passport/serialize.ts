@@ -1,8 +1,10 @@
 import { User } from "@prisma/client";
-import { Done } from "./strategy";
 
-const serializeUserCallback = (user: User, done: Done) => {
-  done(null, user);
+const serializeUserCallback = (
+  user: User,
+  done: (a: Error | null, b: string) => void
+) => {
+  done(null, user.uname);
 };
 
 export default serializeUserCallback;
