@@ -14,4 +14,6 @@ router.post(
   Auth.login
 );
 
+router.get("/logout", Auth.logout);
+
 export default router;
