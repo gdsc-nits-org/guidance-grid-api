@@ -3,8 +3,8 @@ import serverless, { Handler } from "serverless-http";
 
 const serverlessApp = serverless(app);
 
-const handler: Handler = async (event, context) => {
-  return await serverlessApp(event, context);
+const handler: Handler = async (...args) => {
+  return await serverlessApp(...args);
 };
 
 export { handler };
