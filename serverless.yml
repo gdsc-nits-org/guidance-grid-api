@@ -2,7 +2,6 @@ app: gdsc-api
 org: jdeepd
 service: gdsc-api
 frameworkVersion: "3"
-useDotenv: true
 
 plugins:
   - serverless-offline
@@ -11,20 +10,20 @@ plugins:
 custom:
   esbuild:
     bundle: true
-    minify: false
+    minify: true
     target: "node18"
 
 package:
   patterns:
     - "!./**"
     - "dist/**"
-    - "node_modules/.prisma/client/libquery_engine-rhel-*"
 
 provider:
   name: aws
   runtime: nodejs18.x
   region: ap-south-1
   stage: prod
+  deploymentMethod: direct
 
 functions:
   api:
