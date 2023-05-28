@@ -1,8 +1,17 @@
+app: gdsc-api
+org: jdeepd
 service: gdsc-api
 frameworkVersion: "3"
 
 plugins:
   - serverless-offline
+  - serverless-esbuild
+
+custom:
+  esbuild:
+    bundle: true
+    minify: true
+    target: "node18"
 
 package:
   patterns:
@@ -13,7 +22,8 @@ provider:
   name: aws
   runtime: nodejs18.x
   region: ap-south-1
-  stage: dev
+  stage: prod
+  deploymentMethod: direct
 
 functions:
   api:
