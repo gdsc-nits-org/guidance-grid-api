@@ -12,9 +12,62 @@ datasource db {
 }
 
 model User {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  uname    String @unique
-  email    String @unique
-  name     String
-  password String
+  id             String     @id @default(auto()) @map("_id") @db.ObjectId
+  uname          String     @unique
+  email          String     @unique
+  name           String
+  password       String
+  profileImage   String?
+  profileBanner  String?
+  bio            String?
+  linkedInHandle String?
+  githubHandle   String?
+  facebookHandle String?
+  article        Article[]
+  Bookmark       Bookmark[]
+  Comment        Comment[]
+  Vote           Vote[]
+}
+
+model Article {
+  id       String     @id @default(auto()) @map("_id") @db.ObjectId
+  title    String
+  content  String
+  author   User       @relation(fields: [userId], references: [id])
+  userId   String     @db.ObjectId
+  tag      String
+  Votes    Int
+  Bookmark Bookmark[]
+  Comment  Comment[]
+  Vote     Vote[]
+}
+
+model Vote {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  article   Article @relation(fields: [articleId], references: [id])
+  articleId String  @db.ObjectId
+  upvotedBy User    @relation(fields: [userId], references: [id])
+  userId    String  @db.ObjectId
+  vote      Int
+
+  @@unique([articleId, userId])
+}
+
+model Bookmark {
+  id           String  @id @default(auto()) @map("_id") @db.ObjectId
+  article      Article @relation(fields: [articleId], references: [id])
+  articleId    String  @db.ObjectId
+  bookmarkedBy User    @relation(fields: [userId], references: [id])
+  userId       String  @db.ObjectId
+
+  @@unique([articleId, userId])
+}
+
+model Comment {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  article   Article @relation(fields: [articleId], references: [id])
+  articleId String  @db.ObjectId
+  commentBy User    @relation(fields: [userId], references: [id])
+  userId    String  @db.ObjectId
+  comment   String
 }
