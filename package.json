@@ -32,6 +32,7 @@
     "@types/yamljs": "^0.2.31",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
+    "dotenv": "^16.3.1",
     "esbuild": "^0.17.4",
     "eslint": "^8.32.0",
     "lint-staged": "^13.1.0",
@@ -52,11 +53,14 @@
     "cookie-session": "^2.0.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
     "express-validator": "^6.15.0",
     "helmet": "^6.0.1",
+    "ioredis": "^5.3.2",
     "morgan": "^1.10.0",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
+    "rate-limit-redis": "^3.0.2",
     "serverless-http": "^3.1.1"
   },
   "lint-staged": {
