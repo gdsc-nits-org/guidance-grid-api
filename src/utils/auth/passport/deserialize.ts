@@ -1,7 +1,6 @@
 import * as Utils from "@utils";
-import { Done } from "./strategy";
 
-const deserializeUserCallback = async (username: string, done: Done) => {
+const deserializeUserCallback = async (username: string, done: any) => {
   try {
     const user = await Utils.Auth.db.getUserByUname(username);
     if (user) {

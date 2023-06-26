@@ -1,14 +1,11 @@
-import { User } from "@prisma/client";
 import * as Errors from "@errors";
 import * as Utils from "@utils";
 import { Strategy as LocalStrategy } from "passport-local";
 
-type Done = (err: any, user?: User | false) => void;
-
 const verifyCallback = async (
   username: string,
   password: string,
-  done: Done
+  done: any
 ) => {
   try {
     const user = await Utils.Auth.login(username, password);
@@ -24,5 +21,4 @@ const verifyCallback = async (
 
 const localStrategy = new LocalStrategy(verifyCallback);
 
-export type { Done };
 export default localStrategy;
