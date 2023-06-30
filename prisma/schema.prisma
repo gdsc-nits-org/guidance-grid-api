@@ -30,16 +30,17 @@ model User {
 }
 
 model Article {
-  id       String     @id @default(auto()) @map("_id") @db.ObjectId
-  title    String
-  content  String
-  author   User       @relation(fields: [userId], references: [id])
-  userId   String     @db.ObjectId
-  tag      String
-  Votes    Int
-  Bookmark Bookmark[]
-  Comment  Comment[]
-  Vote     Vote[]
+  id        String     @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  content   String
+  createdAt DateTime   @default(now())
+  author    User       @relation(fields: [userId], references: [id])
+  userId    String     @db.ObjectId
+  tags      String[]
+  Votes     Int        @default(0)
+  Bookmark  Bookmark[]
+  Comment   Comment[]
+  Vote      Vote[]
 }
 
 model Vote {
