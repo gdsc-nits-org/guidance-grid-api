@@ -20,3 +20,7 @@
 #### Note:
 
 To make a local MongoDB server work with Prisma, make sure to enable [`replica_set`](https://github.com/prisma/prisma/issues/8266#issuecomment-1133644139)
+
+## Deploying on AWS
+
+Read this [blog post](https://jdeep.tech/posts/post-006)
