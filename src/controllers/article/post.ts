@@ -4,9 +4,7 @@ import { prisma } from "@utils";
 
 const post: Interfaces.Controllers.Async = async (req, res, next) => {
   const { title, content, tags } = req.body;
-  if (!req.session.passport.user) {
-    return res.json(Utils.Response.error("Not logged in", 404));
-  }
+  // User is guaranteed to exist as isLoggedIn middleware is used
   const { user } = req.session.passport;
   try {
     await prisma.article.create({
