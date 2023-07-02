@@ -13,4 +13,6 @@ router.post(
   Controllers.Article.post
 );
 
+router.get("/getmany", Controllers.Article.getMany);
+
 export default router;
