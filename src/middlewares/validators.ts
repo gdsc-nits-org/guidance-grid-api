@@ -15,4 +15,11 @@ const LOGIN_VALIDATORS = [
   body("password").isString().not().isEmpty(),
 ];
 
-export { SIGNUP_VALIDATORS, LOGIN_VALIDATORS };
+const CREATE_ARTICLE_VALIDATORS = [
+  body("title").isString().not().isEmpty().trim(),
+  body("content").isString().not().isEmpty().trim(),
+  body("tags").isArray(),
+  body("tags.*").isString().not().isEmpty().trim(),
+];
+
+export { SIGNUP_VALIDATORS, LOGIN_VALIDATORS, CREATE_ARTICLE_VALIDATORS };

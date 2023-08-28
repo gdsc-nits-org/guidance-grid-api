@@ -42,6 +42,7 @@ passport.deserializeUser(Utils.Auth.passport.deserializeUserCallback);
 // Routers
 app.use(`${Constants.System.ROOT}/`, Routers.Health);
 app.use(`${Constants.System.ROOT}/auth/`, Routers.Auth);
+app.use(`${Constants.System.ROOT}/article/`, Routers.Article);
 
 // Error Handlers
 app.use(Middlewares.Error.errorHandler);

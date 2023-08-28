@@ -1,9 +1,9 @@
-import esbuild from "esbuild"
+import esbuild from "esbuild";
 
-const buildDir = "build"
-const buildEntry = "handler.js"
-const distDir = "dist"
-const distOutfile = "main.js"
+const buildDir = "build";
+const buildEntry = "handler.js";
+const distDir = "dist";
+const distOutfile = "main.js";
 
 esbuild.build({
     entryPoints: [`./${buildDir}/${buildEntry}`],
